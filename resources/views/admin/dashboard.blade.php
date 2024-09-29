@@ -146,7 +146,7 @@
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label first">Main Menu</li>
-                    <li><a href="{{ route('dashboard') }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                    <li><a href="{{ route('dashboard') }}" aria-expanded="false"><i class="icon icon-app-store"></i><span
                         class="nav-text">Dashboard</span></a>
                     </li>
 
@@ -155,8 +155,11 @@
                     <li><a href="{{ route('profile') }}" aria-expanded="false"><i class="icon icon-single-04"></i><span
                         class="nav-text">Profile</span></a>
                     </li>
-                    <li><a href="{{ route('service.index') }}" aria-expanded="false"><i class="icon icon-single-04"></i><span
+                    <li><a href="{{ route('service.index') }}" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                         class="nav-text">Service</span></a>
+                    </li>
+                    <li><a href="{{ route('education.index') }}" aria-expanded="false"><i class="icon icon-plug"></i><span
+                        class="nav-text">Education</span></a>
                     </li>
                 </ul>
             </div>

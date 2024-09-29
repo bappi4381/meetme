@@ -3,6 +3,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\ServiceController;
+use App\Http\Controllers\admin\EducationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/service', [ServiceController::class, 'store'])->name('service.store');
     Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
     Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
-
     Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
+    
+    Route::resource('education', EducationController::class);
+    
 });
