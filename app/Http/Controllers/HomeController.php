@@ -1,18 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\profile;
+use App\Models\Profile;
+use App\Models\Service;
+use App\Models\Skill;
+use App\Models\Exprience;
+use App\Models\Education;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
         $profile = Profile::first();
-        return view('frontend.main.index',compact('profile'));
+        $services = Service::all();
+        return view('frontend.main.index',compact('profile','services'));
     }
     public function resume(){
         $profile = Profile::first();
-        return view('frontend.main.resume',compact('profile'));
+        $skills = Skill::all();
+        $experiences = Exprience::all();
+        $educations = Education::all();
+        return view('frontend.main.resume',compact('profile','skills','experiences','educations'));
     }
     public function portfolio(){
         $profile = Profile::first();

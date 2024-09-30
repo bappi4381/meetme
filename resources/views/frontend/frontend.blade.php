@@ -64,7 +64,7 @@
                             </ul>
                         </div>
                         <div class="download-cv mb-4">
-                            <a class="" target="_blank" href="#">
+                            <a class="" target="_blank" href="storage/uploads/cv/Md sajjadul islam.pdf">
                                 <i class="fa fa-download"></i> Download Resume
                             </a>
                         </div>

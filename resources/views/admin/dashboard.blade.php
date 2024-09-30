@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
+    <title>Meetme-Admin</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/') }}admin/images/favicon.png">
     <link rel="stylesheet" href="{{ asset('/') }}admin/vendor/owl-carousel/css/owl.carousel.min.css">
@@ -160,6 +160,9 @@
                     </li>
                     <li><a href="{{ route('education.index') }}" aria-expanded="false"><i class="icon icon-plug"></i><span
                         class="nav-text">Education</span></a>
+                    </li>
+                    <li><a href="{{ route('proficiency.index') }}" aria-expanded="false"><i class="ti-blackboard"></i><span
+                        class="nav-text">Proficiency</span></a>
                     </li>
                 </ul>
             </div>

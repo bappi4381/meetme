@@ -24,13 +24,9 @@ class ServiceController extends Controller
         Service::create($request->all());
         return redirect()->route('service.index')->with('success', 'Service created successfully.');
     }
-    public function edit($id)
+    public function edit()
     {
-        // Fetch the service by ID
-        $service = Service::findOrFail($id);
-
-        // Pass the service data to the edit view
-        return view('admin.main.service', compact('service'));
+       
     }
     public function update(Request $request,$id)
     {

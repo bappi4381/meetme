@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\EducationController;
+use App\Http\Controllers\admin\ProficiencyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,10 +45,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/update/{id}', [ProfileController::class, 'storeProfile'])->name('profile.update');
     Route::get('/service', [ServiceController::class, 'index'])->name('service.index');
     Route::post('/service', [ServiceController::class, 'store'])->name('service.store');
-    Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
     Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
     Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
     
     Route::resource('education', EducationController::class);
-    
+
+    Route::get('/proficiency', [ProficiencyController::class, 'index'])->name('proficiency.index');
+    Route::post('/proficiency/skill', [ProficiencyController::class, 'skill_store'])->name('proficiency.skill_store');
+    Route::delete('/proficiency/skills/{id}', [ProficiencyController::class, 'skills_destroy'])->name('skills.destroy');
+   
+    Route::post('/proficiency/exprience', [ProficiencyController::class, 'exprience_store'])->name('proficiency.exprience_store');
+    Route::delete('/proficiency/exprience/{id}', [ProficiencyController::class, 'exprience_destroy'])->name('experiences.destroy');
+   
+    //Route::resource('proficiency', ProficiencyController::class);
 });
