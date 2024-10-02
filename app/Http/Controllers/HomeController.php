@@ -6,6 +6,9 @@ use App\Models\Service;
 use App\Models\Skill;
 use App\Models\Exprience;
 use App\Models\Education;
+use App\Models\Blog;
+use App\Models\Contact;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,14 +31,35 @@ class HomeController extends Controller
     }
     public function blog(){
         $profile = Profile::first();
-        return view('frontend.main.blog',compact('profile'));
+        $blogs = Blog::all();
+        return view('frontend.main.blog',compact('profile','blogs'));
     }
-    public function blogDetalis(){
+    public function blogDetalis($id){
         $profile = Profile::first();
-        return view('frontend.main.blog-detalis',compact('profile'));
+        $blog = Blog::findOrFail($id);
+        return view('frontend.main.blogdDetalis',compact('profile','blog'));
     }
     public function contact(){
         $profile = Profile::first();
         return view('frontend.main.contact',compact('profile'));
+    }
+    public function contact_admin(Request $request)
+    {
+        $validator = Validator::make($request->all(), [ // Use $request, not $this->request
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'mobile' => 'nullable|string|max:15',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+        // If validation fails, redirect back with errors
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        // Create a new Contact record
+        contact::create($validator->validated());
+
+        // Redirect to the index page with a success message
+        return redirect()->route('contact')->with('success', 'Information submit successfully!');
     }
 }

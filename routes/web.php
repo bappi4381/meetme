@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\EducationController;
 use App\Http\Controllers\admin\ProficiencyController;
+use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +24,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/resume', [HomeController::class, 'resume'])->name('resume');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
-Route::get('/blog/details', [HomeController::class, 'blogDetails'])->name('details');
+Route::get('/blog/{id}', [HomeController::class, 'blogDetalis'])->name('blog.details');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contacts', [HomeController::class, 'contact_admin'])->name('contact.admin');
 
 //login
 
@@ -56,6 +59,15 @@ Route::middleware('auth')->group(function () {
    
     Route::post('/proficiency/exprience', [ProficiencyController::class, 'exprience_store'])->name('proficiency.exprience_store');
     Route::delete('/proficiency/exprience/{id}', [ProficiencyController::class, 'exprience_destroy'])->name('experiences.destroy');
-   
-    //Route::resource('proficiency', ProficiencyController::class);
+
+
+    Route::get('/admin/blog', [BlogController::class, 'index'])->name('blog.index');
+    Route::post('/blog/add', [BlogController::class, 'store'])->name('blog.add');
+    Route::get('/admin/blog/details/{id}', [BlogController::class, 'show_blog'])->name('blog.show');
+    Route::put('/admin/edit/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+    Route::delete('/admin/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+
+    Route::get('/admin/contact', [ContactController::class, 'index'])->name('contact.index');
+    Route::delete('/admin/contact/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
+
 });

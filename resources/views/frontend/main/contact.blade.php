@@ -10,7 +10,8 @@
         </div>
         <div class="row">
             <div class="col">
-                <form id="contact-form">
+                <form action="{{ route('contact.admin') }}" method="POST">
+                    @csrf 
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="">Name</label>
@@ -24,7 +25,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="">Phone</label>
-                            <input type="tel" name="mobile" class="form-control" required>
+                            <input type="text" name="mobile" class="form-control" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="">Subject</label>

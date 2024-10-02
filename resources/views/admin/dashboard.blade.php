@@ -13,8 +13,10 @@
     <link href="{{ asset('/') }}admin/vendor/fullcalendar/css/fullcalendar.min.css" rel="stylesheet">
     <link href="{{ asset('/') }}admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
     <link href="{{ asset('/') }}admin/css/style.css" rel="stylesheet">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -164,6 +166,12 @@
                     <li><a href="{{ route('proficiency.index') }}" aria-expanded="false"><i class="ti-blackboard"></i><span
                         class="nav-text">Proficiency</span></a>
                     </li>
+                    <li><a href="{{ route('blog.index') }}" aria-expanded="false"><i class="ti-pencil-alt"></i><span
+                        class="nav-text">Blog</span></a>
+                    </li>
+                    <li><a href="{{ route('contact.index') }}" aria-expanded="false"><i class="ti-comments"></i><span
+                        class="nav-text">Contact</span></a>
+                    </li>
                 </ul>
             </div>
 
@@ -171,6 +179,8 @@
         </div>
       
         @yield('content')
+
+        
        
         <div class="footer">
             <div class="copyright">
@@ -209,36 +219,24 @@
     <script src="{{ asset('/') }}admin/vendor/morris/morris.min.js"></script>
 
 
-    <script src="{{ asset('/') }}admin/vendor/circle-progress/circle-progress.min.js"></script>
     <script src="{{ asset('/') }}admin/js/plugins-init/fullcalendar-init.js"></script>
     <script src="{{ asset('/') }}admin/vendor/gaugeJS/dist/gauge.min.js"></script>
-
-    <!--  flot-chart js -->
-    <script src="{{ asset('/') }}admin/vendor/flot/jquery.flot.js"></script>
-    <script src="{{ asset('/') }}admin/vendor/flot/jquery.flot.resize.js"></script>
 
     <!-- Owl Carousel -->
     <script src="{{ asset('/') }}admin/vendor/owl-carousel/js/owl.carousel.min.js"></script>
 
     <!-- Counter Up -->
-    <script src="{{ asset('/') }}admin/vendor/jqvmap/js/jquery.vmap.min.js"></script>
-    <script src="{{ asset('/') }}admin/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
-    <script src="{{ asset('/') }}admin/vendor/jquery.counterup/jquery.counterup.min.js"></script>
-    <script src="{{ asset('/') }}admin/js/styleSwitcher.js"></script>
-
-
 
     <script src="{{ asset('/') }}admin/vendor/jqueryui/js/jquery-ui.min.js"></script>
     <script src="{{ asset('/') }}admin/vendor/moment/moment.min.js"></script>
-
-    <script src="{{ asset('/') }}/vendor/global/global.min.js"></script>
-    <script src="{{ asset('/') }}/js/quixnav-init.js"></script>
-    <script src="{{ asset('/') }}/js/custom.min.js"></script>
 
     <script src="{{ asset('/') }}admin/vendor/fullcalendar/js/fullcalendar.min.js"></script>
     <script src="{{ asset('/') }}admin/js/plugins-init/fullcalendar-init.js"></script>
 
     <script src="{{ asset('/') }}admin/js/dashboard/dashboard-1.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
 
 </body>
 
