@@ -6,6 +6,7 @@ use App\Models\Service;
 use App\Models\Skill;
 use App\Models\Exprience;
 use App\Models\Education;
+use App\Models\Project;
 use App\Models\Blog;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Validator;
@@ -27,7 +28,8 @@ class HomeController extends Controller
     }
     public function portfolio(){
         $profile = Profile::first();
-        return view('frontend.main.portfolio',compact('profile'));
+        $projects = Project::all();
+        return view('frontend.main.portfolio',compact('profile','projects'));
     }
     public function blog(){
         $profile = Profile::first();

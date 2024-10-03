@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\EducationController;
 use App\Http\Controllers\admin\ProficiencyController;
+use App\Http\Controllers\admin\ProtfolioController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/proficiency/exprience', [ProficiencyController::class, 'exprience_store'])->name('proficiency.exprience_store');
     Route::delete('/proficiency/exprience/{id}', [ProficiencyController::class, 'exprience_destroy'])->name('experiences.destroy');
 
+    Route::get('/admin/protfolio', [ProtfolioController::class, 'index'])->name('protfolio.index');
+    Route::post('/admin/protfolio/store', [ProtfolioController::class, 'store'])->name('protfolio.add');
+    Route::get('/admin/protfolio/details/{id}', [ProtfolioController::class, 'show'])->name('protfolio.show');
+    Route::put('/admin/protfolio/edit/{id}', [ProtfolioController::class, 'update'])->name('protfolio.update');
+    Route::delete('/admin/protfolio/{id}', [ProtfolioController::class, 'destroy'])->name('protfolio.destroy');
 
     Route::get('/admin/blog', [BlogController::class, 'index'])->name('blog.index');
     Route::post('/blog/add', [BlogController::class, 'store'])->name('blog.add');

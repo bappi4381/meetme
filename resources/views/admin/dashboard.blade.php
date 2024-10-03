@@ -166,6 +166,9 @@
                     <li><a href="{{ route('proficiency.index') }}" aria-expanded="false"><i class="ti-blackboard"></i><span
                         class="nav-text">Proficiency</span></a>
                     </li>
+                    <li><a href="{{ route('protfolio.index') }}" aria-expanded="false"><i class="ti-notepad"></i><span
+                        class="nav-text">Protfolio</span></a>
+                    </li>
                     <li><a href="{{ route('blog.index') }}" aria-expanded="false"><i class="ti-pencil-alt"></i><span
                         class="nav-text">Blog</span></a>
                     </li>
